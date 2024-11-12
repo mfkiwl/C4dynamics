@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>c4dynamics.filters.kalman &#8212; C4DYNAMICS v1.2 Manual</title>
+    <title>c4dynamics.filters.kalman &#8212; C4DYNAMICS v2.0</title>
   
   
   
@@ -37,7 +37,7 @@
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
   <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script src="../../../_static/documentation_options.js?v=1ac682b4"></script>
+    <script src="../../../_static/documentation_options.js?v=75c5c689"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
@@ -48,7 +48,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Nov 10, 2024"/>
+    <meta name="docbuild:last-update" content="Nov 12, 2024"/>
   </head>
   
   
@@ -134,7 +134,7 @@
   
   
   
-    <p class="title logo__title">C4DYNAMICS v1.2 Manual</p>
+    <p class="title logo__title">C4DYNAMICS v2.0</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -753,14 +753,14 @@ document.write(`
 
 <span class="sd">        &gt;&gt;&gt; kf = kalman({&#39;x&#39;: 0}, P0 = 0.5**2, F = 1, G = 150, H = 1, R = 200, Q = 0.05)</span>
 <span class="sd">        &gt;&gt;&gt; kf.X  # doctest: +NUMPY_FORMAT</span>
-<span class="sd">        array([0])</span>
-<span class="sd">        &gt;&gt;&gt; kf.P        # doctest: +ELLIPSIS</span>
-<span class="sd">        array([[0.25...]])</span>
+<span class="sd">        [0]</span>
+<span class="sd">        &gt;&gt;&gt; kf.P          # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [[0.25...]]</span>
 <span class="sd">        &gt;&gt;&gt; kf.predict(u = 1)</span>
 <span class="sd">        &gt;&gt;&gt; kf.X      # doctest: +NUMPY_FORMAT</span>
-<span class="sd">        array([150]) </span>
-<span class="sd">        &gt;&gt;&gt; kf.P</span>
-<span class="sd">        array([[0.3]])</span>
+<span class="sd">        [150]</span>
+<span class="sd">        &gt;&gt;&gt; kf.P  # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [[0.3]]</span>
 
 
 <span class="sd">        </span>
@@ -770,14 +770,14 @@ document.write(`
 
 <span class="sd">        &gt;&gt;&gt; kf = kalman({&#39;x&#39;: 0}, P0 = 0.5**2, F = 1, G = 150, H = 1, R = 200, Q = 0.05)</span>
 <span class="sd">        &gt;&gt;&gt; kf.X  # doctest: +NUMPY_FORMAT</span>
-<span class="sd">        array([0])</span>
-<span class="sd">        &gt;&gt;&gt; kf.P</span>
-<span class="sd">        array([[0.25]])</span>
+<span class="sd">        [0]</span>
+<span class="sd">        &gt;&gt;&gt; kf.P # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [[0.25]]</span>
 <span class="sd">        &gt;&gt;&gt; kf.predict(u = 1, Q = 0.01)</span>
 <span class="sd">        &gt;&gt;&gt; kf.X  # doctest: +NUMPY_FORMAT</span>
-<span class="sd">        array([150])</span>
-<span class="sd">        &gt;&gt;&gt; kf.P</span>
-<span class="sd">        array([[0.26]])</span>
+<span class="sd">        [150]</span>
+<span class="sd">        &gt;&gt;&gt; kf.P # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [[0.26]]</span>
 
 
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -865,7 +865,7 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; print(kf)</span>
 <span class="sd">        [ x ]</span>
 <span class="sd">        &gt;&gt;&gt; kf.X   # doctest: +NUMPY_FORMAT</span>
-<span class="sd">        array([0])</span>
+<span class="sd">        [0]</span>
 <span class="sd">        &gt;&gt;&gt; kf.P                # doctest: +NUMPY_FORMAT</span>
 <span class="sd">        [[3.187...]]     </span>
 <span class="sd">        &gt;&gt;&gt; kf.update(z = 100)  # returns Kalman gain   # doctest: +NUMPY_FORMAT</span>
@@ -883,16 +883,16 @@ document.write(`
 
 <span class="sd">        &gt;&gt;&gt; kf = kalman({&#39;x&#39;: 0}, P0 = 0.5**2, F = 1, G = 150, H = 1, R = 200, Q = 0.05)</span>
 <span class="sd">        &gt;&gt;&gt; kf.X   # doctest: +NUMPY_FORMAT</span>
-<span class="sd">        array([0])</span>
-<span class="sd">        &gt;&gt;&gt; kf.P</span>
-<span class="sd">        array([[0.25]])</span>
+<span class="sd">        [0]</span>
+<span class="sd">        &gt;&gt;&gt; kf.P   # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [[0.25]]</span>
 <span class="sd">        &gt;&gt;&gt; K = kf.update(z = 150, R = 0)</span>
 <span class="sd">        &gt;&gt;&gt; K   # doctest: +NUMPY_FORMAT</span>
-<span class="sd">        array([[1]])</span>
+<span class="sd">        [[1]]</span>
 <span class="sd">        &gt;&gt;&gt; kf.X  # doctest: +NUMPY_FORMAT</span>
-<span class="sd">        array([150])</span>
+<span class="sd">        [150]</span>
 <span class="sd">        &gt;&gt;&gt; kf.P  # doctest: +NUMPY_FORMAT</span>
-<span class="sd">        array([[0]])</span>
+<span class="sd">        [[0]]</span>
 
 <span class="sd">          </span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -984,8 +984,8 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; kf.predict()</span>
 <span class="sd">        &gt;&gt;&gt; # store X after prediction</span>
 <span class="sd">        &gt;&gt;&gt; kf.store() </span>
-<span class="sd">        &gt;&gt;&gt; kf.update(z = 100)  # doctest: +ELLIPSIS </span>
-<span class="sd">        array([[0.00149...]])</span>
+<span class="sd">        &gt;&gt;&gt; kf.update(z = 100)    # doctest: +NUMPY_FORMAT</span>
+<span class="sd">        [[0.00149...]]</span>
 <span class="sd">        &gt;&gt;&gt; # store X after correct</span>
 <span class="sd">        &gt;&gt;&gt; kf.store() </span>
 
@@ -1161,7 +1161,7 @@ By C4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 10, 2024.
+  Last updated on Nov 12, 2024.
   <br/>
 </p>
   </div>
