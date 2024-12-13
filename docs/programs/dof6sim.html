@@ -55,7 +55,7 @@
     <link rel="prev" title="Programs" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 12, 2024"/>
+    <meta name="docbuild:last-update" content="Dec 13, 2024"/>
   </head>
   
   
@@ -465,7 +465,7 @@ document.write(`
 <h1>6 Degrees Of Freedom Missile Guidance Simulation<a class="headerlink" href="#6-Degrees-Of-Freedom-Missile-Guidance-Simulation" title="Link to this heading">#</a></h1>
 <p>This notebook demonstrates how to use c4dynamics to implelment a six degrees of freedom simulation. The details of the missile models and the guidance system can be found in the example at chapter 12 of the Military Handbook of Missile Flight Simulation.</p>
 <p>C4dynamics is a powerful framework for algorithm development. Its advanced toolset enables realistic modeling and dynamic analysis, making it ideal for applications in robotics, aerospace, and mechanical engineering.</p>
-<p>The program utilizes the following assets of c4dynamics:</p>
+<p>The program utilizes the following components of c4dynamics:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Object</p></th>
@@ -484,15 +484,15 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p>seeker</p></td>
 <td><p><a class="reference external" href="https://c4dynamics.github.io/C4dynamics/api/Sensors.html">sensors</a></p></td>
-<td><p>line of sight seeker</p></td>
+<td><p>Line of sight seeker</p></td>
 </tr>
 <tr class="row-odd"><td><p>g_ms2</p></td>
 <td><p><a class="reference external" href="https://c4dynamics.github.io/C4dynamics/api/utils.const.html">const</a></p></td>
-<td><p>gravity constant in meters per second</p></td>
+<td><p>Gravity constant in meters per second</p></td>
 </tr>
 <tr class="row-even"><td><p>r2d</p></td>
 <td><p><a class="reference external" href="https://c4dynamics.github.io/C4dynamics/api/utils.const.html">const</a></p></td>
-<td><p>radians to degrees conversion constant</p></td>
+<td><p>Radians to degrees conversion constant</p></td>
 </tr>
 <tr class="row-odd"><td><p>plotdefaults</p></td>
 <td><p><a class="reference external" href="https://c4dynamics.github.io/C4dynamics/api/generated/utils/c4dynamics.utils.plottools.plotdefaults.html">utils</a></p></td>
@@ -878,21 +878,21 @@ document.write(`
 miss: 0.00339, flight time: 7.8
 </pre></div></div>
 </div>
-<p><img alt="alt text" src="../_images/image.png" /></p>
+<p><img alt="alt text" src="../_images/missdistance.png" /></p>
 </section>
 <section id="Plot-results">
 <h2>Plot results<a class="headerlink" href="#Plot-results" title="Link to this heading">#</a></h2>
 <section id="Configure-pyplot">
 <h3>Configure pyplot<a class="headerlink" href="#Configure-pyplot" title="Link to this heading">#</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;dark_background&#39;</span><span class="p">)</span>
 
 <span class="n">fcsize</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">fontsize</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">fontsize</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">asp</span> <span class="o">=</span> <span class="mi">1080</span> <span class="o">/</span> <span class="mi">1920</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
@@ -910,7 +910,7 @@ miss: 0.00339, flight time: 7.8
 <section id="Trajectories">
 <h3>Trajectories<a class="headerlink" href="#Trajectories" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[78]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[81]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">switch_backend</span><span class="p">(</span><span class="s1">&#39;inline&#39;</span><span class="p">)</span>
@@ -939,7 +939,7 @@ miss: 0.00339, flight time: 7.8
 <section id="Euler-angles">
 <h3>Euler angles<a class="headerlink" href="#Euler-angles" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[82]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -964,7 +964,7 @@ miss: 0.00339, flight time: 7.8
 <section id="Line-of-sight-rates">
 <h3>Line of sight rates<a class="headerlink" href="#Line-of-sight-rates" title="Link to this heading">#</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[83]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># omega los</span>
@@ -1086,7 +1086,7 @@ By c4dynamics
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 12, 2024.
+  Last updated on Dec 13, 2024.
   <br/>
 </p>
   </div>
