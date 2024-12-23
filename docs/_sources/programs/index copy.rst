@@ -30,8 +30,9 @@ variables for radar-tracked targets.
     - Simultaneous objects detection object and tracking.
   * - `6DOF <dof6sim.ipynb>`_
     - Six degrees of freedom simulation of a missile pursuing a target.
-  * - `Ballistic <ballisticestimation>`_
-    - Ballistic coefficient estimation using Extended Kalman filter.
 
+
+  * - `Ballistics Estimation <ballistic_coefficient.ipynb>`_
+    - Ballistic coefficient estimation using Extended Kalman fitler
 
 
